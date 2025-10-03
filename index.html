@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Racing Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+        
+        #gameContainer {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+        
+        #ui {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+            color: white;
+            font-size: 18px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        #controls {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            z-index: 100;
+            color: white;
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        #editorLink {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            background: #ff6b6b;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        #editorLink:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+        }
+        
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="gameContainer">
+        <div id="ui">
+            <div>Speed: <span id="speed">0</span> km/h</div>
+            <div>Lap: <span id="lap">1</span>/3</div>
+        </div>
+        
+        <div id="controls">
+            <div><strong>Controls:</strong></div>
+            <div>W/↑ - Accelerate</div>
+            <div>S/↓ - Brake</div>
+            <div>A/← - Turn Left</div>
+            <div>D/→ - Turn Right</div>
+            <div>Space - Handbrake</div>
+        </div>
+        
+        <a href="editor.html" id="editorLink">Visual Editor</a>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/CarModel.js"></script>
+    <script src="js/TrackEnvironment.js"></script>
+    <script src="js/GameMechanics.js"></script>
+    <script src="js/RacingGame.js"></script>
+</body>
+</html>
+
+
+
